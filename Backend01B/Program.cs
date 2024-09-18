@@ -42,6 +42,12 @@
                 .OrderByDescending(p => p.Height)
                 .Take(3);
 
+            //query syntax - érdekességként - ritkán nézünk ilyet
+            var q6s = from p in people
+                      where p.Age > 50
+                      orderby p.Height descending
+                      select p;
+
             //Select: projekció vagy tulajdonságkiválasztás
             //Person -> valamely tujajdonsága (pl. neve)
             var q7 = people
@@ -62,6 +68,24 @@
             var q10 = people.Count(t => t.HairColor == "Blonde");
 
             
+            //GROUP BY
+            //mindig valamilyen "enum-szerű" változó alapján
+            //mindig valailyen aggregátum
+
+            //hajszínenként átlagéletkor
+            //groupnál érdemes a query syntax-ot használni, mert átláthatóbb
+            var q11 = from p in people
+                      group p by p.HairColor into g
+                      select new
+                      {
+                          HairColor = g.Key,
+                          AvgAge = g.Average(p => p.Age),
+                          AvgHeight = g.Average(p => p.Height),
+                          Elements = g //maga a csoport, ez is érdekes lehet
+                      };
+            
+            //JOIN
+
 
 
 
