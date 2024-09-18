@@ -83,8 +83,45 @@
                           AvgHeight = g.Average(p => p.Height),
                           Elements = g //maga a csoport, ez is érdekes lehet
                       };
-            
+
             //JOIN
+
+            //generate a worker list with 20 elements NOW!!!!
+            var workers = new List<Worker>()
+            {
+                new Worker("Alice", 2000, "Analyst", "Miskolc"),
+                new Worker("Emily", 4000, "Analyst", "Miskolc"),
+                new Worker("Emily", 2500, "Analyst", "Szeged"),
+                new Worker("Michael", 3500, "Designer", "Miskolc"),
+                new Worker("Emily", 2500, "Consultant", "Miskolc"),
+                new Worker("John", 2000, "Designer", "Miskolc"),
+                new Worker("Michael", 4000, "Designer", "Szeged"),
+                new Worker("Emily", 2000, "Consultant", "Szeged"),
+                new Worker("Emily", 3000, "Analyst", "Miskolc"),
+                new Worker("John", 2500, "Designer", "Miskolc"),
+                new Worker("Robert", 3500, "Consultant", "Miskolc"),
+                new Worker("Michael", 2000, "Analyst", "Budapest"),
+                new Worker("Emily", 2500, "Manager", "Miskolc"),
+                new Worker("Alice", 4000, "Designer", "Szeged"),
+                new Worker("Robert", 3500, "Manager", "Budapest"),
+                new Worker("Robert", 2500, "Consultant", "Budapest"),
+                new Worker("Emily", 3500, "Analyst", "Budapest"),
+                new Worker("Emily", 3500, "Manager", "Szeged"),
+                new Worker("Alice", 3500, "Analyst", "Miskolc"),
+                new Worker("Robert", 2500, "Designer", "Budapest"),
+                new Worker("Alice", 3500, "Designer", "Szeged"),
+                new Worker("Michael", 2500, "Developer", "Szeged"),
+                new Worker("Robert", 2000, "Designer", "Budapest"),
+                new Worker("John", 4000, "Consultant", "Miskolc"),
+                new Worker("Alice", 3000, "Designer", "Miskolc"),
+                new Worker("John", 3500, "Developer", "Budapest"),
+                new Worker("Robert", 2000, "Analyst", "Miskolc"),
+                new Worker("John", 3000, "Consultant", "Szeged"),
+                new Worker("Michael", 3500, "Analyst", "Budapest"),
+                new Worker("John", 3000, "Consultant", "Budapest"),
+
+            };
+
 
 
 
