@@ -141,7 +141,17 @@ namespace Backend01B
                           Phone = l.phone
                       };
 
-            
+            //selectmany
+
+            var faculties = new List<Faculty>()
+            {
+                new Faculty("NIK", 
+                    new Course[] { new Course("Prog1", 5), new Course("Prog2", 5), new Course("Web", 5) }),
+                new Faculty("KGK", 
+                    new Course[] { new Course("Mik", 3), new Course("Mak", 5)}),
+                new Faculty("KVK",
+                    new Course[] { new Course("Elektro", 5), new Course("Villany", 4), new Course("Irtech", 3) }),
+            }
 
 
 
