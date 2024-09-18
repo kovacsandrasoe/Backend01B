@@ -47,10 +47,22 @@
             var q7 = people
                 .Where(p => p.Age > 50)
                 .OrderByDescending(p => p.Height)
-                .Take(3)
+                .Take(3) //vedd az első hármat
+                .Skip(1) //dobd ki az elsőt
                 .Select(p => p.Name);
 
-            ;
+            //aggregálás (tipikusan 1 atomi eredmény születik)
+            //átlagos magasság
+            var q8 = people.Average(p => p.Height);
+
+            //maximális életkor
+            var q9 = people.Max(p => p.Age);
+
+            //darabszám: hány emberre igaz az állítás
+            var q10 = people.Count(t => t.HairColor == "Blonde");
+
+            
+
 
 
 
