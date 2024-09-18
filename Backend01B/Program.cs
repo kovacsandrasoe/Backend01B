@@ -1,4 +1,6 @@
-﻿namespace Backend01B
+﻿using System.Data.Common;
+
+namespace Backend01B
 {
     internal class Program
     {
@@ -119,8 +121,17 @@
                 new Worker("John", 3000, "Consultant", "Szeged"),
                 new Worker("Michael", 3500, "Analyst", "Budapest"),
                 new Worker("John", 3000, "Consultant", "Budapest"),
-
             };
+
+            var locations = new List<Location>()
+            {
+                new Location("Budapest", "IT", "1234567"),
+                new Location("Szeged", "HR", "2345678"),
+                new Location("Miskolc", "Finance", "3456789")
+            };
+
+
+
 
 
 
