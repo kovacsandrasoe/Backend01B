@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             //a person list with 10 elements
-            List<Person> persons = new List<Person>
+            List<Person> people = new List<Person>
             {
                 new Person("John", 25, "Developer", "Black", 1.75),
                 new Person("Jane", 30, "Manager", "Blonde", 1.65),
@@ -18,6 +18,44 @@
                 new Person("Josh", 65, "CPO", "Black", 1.95),
                 new Person("Jasmine", 70, "CLO", "Blonde", 1.50)
             };
+
+            //szűrés: 50 év felettiek
+
+            var q1 = people.Where(p => p.Age > 50);
+
+            //első elem, utolsó elem
+            var q2 = people.First();
+            var q3 = people.Last();
+
+            //első T tulajdonságú elem (lineáris keresés)
+            //első vörös hajú ember
+            var q4 = people.First(p => p.HairColor == "Red");
+            var q4b = people.FirstOrDefault(p => p.HairColor == "Reddd");
+            
+            //rendezés magasságok szerint csökkenőben
+            var q5 = people.OrderByDescending(p => p.Height);
+            
+
+            //bonyi: 50 év felettiek, magasság szerint csökkenő, első 3
+            var q6 = people
+                .Where(p => p.Age > 50)
+                .OrderByDescending(p => p.Height)
+                .Take(3);
+
+            //Select: projekció vagy tulajdonságkiválasztás
+            //Person -> valamely tujajdonsága (pl. neve)
+            var q7 = people
+                .Where(p => p.Age > 50)
+                .OrderByDescending(p => p.Height)
+                .Take(3)
+                .Select(p => p.Name);
+
+            ;
+
+
+
+
+
         }
     }
 }
