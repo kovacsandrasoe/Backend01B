@@ -130,8 +130,18 @@ namespace Backend01B
                 new Location("Miskolc", "Finance", "3456789")
             };
 
+            //munkások és lokációk join-ja (eredménybe: név, szervezeti egység, telefonszá
 
+            var q12 = from w in workers
+                      join l in locations on w.Location equals l.city
+                      select new
+                      {
+                          Name = w.Name,
+                          Department = l.department,
+                          Phone = l.phone
+                      };
 
+            
 
 
 
